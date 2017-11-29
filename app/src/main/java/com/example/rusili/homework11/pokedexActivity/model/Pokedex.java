@@ -15,4 +15,3 @@ public class Pokedex {
     private PokemonEntries[] pokemon_entries;
 
     //TODO: Create getters
-}
