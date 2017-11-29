@@ -15,4 +15,19 @@ public class Pokedex {
     private PokemonEntries[] pokemon_entries;
 
     //TODO: Create getters
+
+    public Pokedex(int id, Region region, VersionGroups[] version_groups, PokemonEntries[] pokemon_entries) {
+        this.id = id;
+        this.region = region;
+
+        this.version_groups = version_groups;
+        this.pokemon_entries = pokemon_entries;
+    }
+
+
+
+
+
+
+
 }
