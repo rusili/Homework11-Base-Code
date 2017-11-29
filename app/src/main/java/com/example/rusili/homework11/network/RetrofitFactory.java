@@ -18,6 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 //
 // DO NOT TOUCH
 //
+// Retofit gets information from the API and allows you use that information in your program
 public class RetrofitFactory {
 	private static RetrofitFactory retrofitFactory;
 
