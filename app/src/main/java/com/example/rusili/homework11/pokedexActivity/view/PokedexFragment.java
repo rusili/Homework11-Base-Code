@@ -22,7 +22,7 @@ public class PokedexFragment extends Fragment {
 	@Nullable
 	@Override
 	public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate();
+		View view = inflater.inflate(R.layout.pokemon_detail,container,false);
 
 		getPokedexList();
 
@@ -37,6 +37,7 @@ public class PokedexFragment extends Fragment {
 				// Each pokemon is in the Pokemon_Species object.
 			}
 		};
+
 		RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
 		RetrofitFactory.getInstance().getPokedex(2);
 	}
