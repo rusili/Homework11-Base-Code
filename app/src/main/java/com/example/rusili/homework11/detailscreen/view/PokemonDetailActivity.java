@@ -29,6 +29,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
 			public void pokemonCallback (Pokemon pokemon) {
 				//TODO: Display pokemon data
 				//Hint: Learn how to use Glide to display an image.
+				//do some more code
 			}
 		};
 		RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
