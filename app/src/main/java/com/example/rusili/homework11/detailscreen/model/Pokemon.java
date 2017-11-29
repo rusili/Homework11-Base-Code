@@ -1,11 +1,30 @@
 package com.example.rusili.homework11.detailscreen.model;
 
-import com.example.rusili.homework11.detailscreen.model.objects.Sprites;
-import com.example.rusili.homework11.detailscreen.model.objects.Stats;
-import com.example.rusili.homework11.detailscreen.model.objects.Types;
-
 public class Pokemon {
-	private Stats[] stats;
+	private String name;
+	private  String type;
+
+	public Pokemon(String name, String type) {
+		this.name = name;
+		this.type = type;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	/*private Stats[] stats;
 	private Sprites sprites;
 	private Types[] types;
 
@@ -21,5 +40,5 @@ public class Pokemon {
 
 	public Types[] getTypes() {
 		return types;
-	}
+	}*/
 }

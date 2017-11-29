@@ -10,6 +10,7 @@ import com.example.rusili.homework11.network.RetrofitFactory;
 
 public class PokemonDetailActivity extends AppCompatActivity{
 	private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
+	private String pokemonName;
 
 	@Override
 	public void onCreate (@Nullable Bundle savedInstanceState) {
