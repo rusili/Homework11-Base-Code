@@ -8,31 +8,31 @@ import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.network.RetrofitFactory;
 
-public class PokemonDetailActivity extends AppCompatActivity{
-	private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
+public class PokemonDetailActivity extends AppCompatActivity {
+    private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
 
-	@Override
-	public void onCreate (@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView();
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView();
 
-		initialize();
-	}
+        initialize();
+    }
 
-	private void initialize () {
-		getPokemonDetails();
-	}
+    private void initialize() {
+        getPokemonDetails();
+    }
 
-	private void getPokemonDetails () {
-		pokemonNetworkListener = new RetrofitFactory.PokemonNetworkListener() {
-			@Override
-			public void pokemonCallback (Pokemon pokemon) {
-				//TODO: Display pokemon data
-				//Hint: Learn how to use Glide to display an image.
-				//do some more code
-			}
-		};
-		RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
-		RetrofitFactory.getInstance().getPokemon(pokemonName);
-	}
+    private void getPokemonDetails() {
+        pokemonNetworkListener = new RetrofitFactory.PokemonNetworkListener() {
+            @Override
+            public void pokemonCallback(Pokemon pokemon) {
+                //TODO: Display pokemon data
+                //Hint: Learn how to use Glide to display an image.
+                //do some more code
+            }
+        };
+        RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
+        RetrofitFactory.getInstance().getPokemon(pokemonName);
+    }
 }
