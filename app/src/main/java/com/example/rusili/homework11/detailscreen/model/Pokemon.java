@@ -10,4 +10,3 @@ public class Pokemon {
 	private Types[] types;
 
 	//TODO: Create getters
-}
