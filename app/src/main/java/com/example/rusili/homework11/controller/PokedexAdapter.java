@@ -1,16 +1,22 @@
 package com.example.rusili.homework11.controller;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.rusili.homework11.R;
+import com.example.rusili.homework11.detailscreen.model.Pokemon;
+import com.example.rusili.homework11.detailscreen.view.PokemonDetailActivity;
+import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
@@ -26,8 +32,9 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
     private List<PokemonEntries> pokemonEntriesList;
     private Context context;
 
-    public PokedexAdapter(List<PokemonEntries> pokemonEntriesList) {
+    public PokedexAdapter(List<PokemonEntries> pokemonEntriesList, Context context) {
         this.pokemonEntriesList = pokemonEntriesList;
+        this.context=context;
     }
 
     @Override
@@ -37,9 +44,34 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
     }
 
     @Override
-    public void onBindViewHolder(PokedexViewHolder holder, int position) {
+    public void onBindViewHolder(final PokedexViewHolder holder, int position) {
         PokemonEntries pokemonEntries = pokemonEntriesList.get(position);
-        holder.pokedexText.setText(pokemonEntries.getPokemon_species().getName());
+        final String pokemonName= pokemonEntries.getPokemon_species().getName();
+        holder.pokedexText.setText(pokemonName);
+        RetrofitFactory.getInstance().setPokemonNetworkListener(new RetrofitFactory.PokemonNetworkListener() {
+            @Override
+            public void pokemonCallback(Pokemon pokemon) {
+                System.out.println(pokemonName + " " + pokemon.getSprites().getBack_default());
+                Glide.with(context)
+                        .load(pokemon.getSprites().getBack_default())
+                        .into(holder.image);
+
+                //Glide.with(holder.pokedexView).load(pokemon.getSprites().getFront_default()).into((ImageView) R.id.pokedex_imageview);
+            }
+        });
+        RetrofitFactory.getInstance().getPokemon(pokemonName);
+
+        //Onclick listener
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(view.getContext(), holder.email.getText(), Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(view.getContext(), PokemonDetailActivity.class);
+                intent.putExtra("pokemon", holder.pokedexText.getText());
+                view.getContext().startActivity(intent);
+
+            }
+        });
 
 
     }
@@ -51,14 +83,18 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
 
     public class PokedexViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView pokedexView;
-        private TextView pokedexText;
+         ImageView pokedexView;
+         TextView pokedexText;
+        CardView layout;
+        ImageView image;
 
         public PokedexViewHolder(View itemView) {
             super(itemView);
 
-            pokedexView = (ImageView) itemView.findViewById(R.id.pokedex_imageview);
+            //pokedexView = (ImageView) itemView.findViewById(R.id.pokedex_imageview);
             pokedexText = (TextView) itemView.findViewById(R.id.pokedex_textview);
+            layout= (CardView) itemView.findViewById(R.id.idLayout);
+            image = (ImageView) itemView.findViewById(R.id.pokedex_imageview);
         }
     }
 }

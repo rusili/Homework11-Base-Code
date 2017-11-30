@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 List<PokemonEntries> pokemonEntriesList = new ArrayList<>();
                 Collections.addAll(pokemonEntriesList, pokedex.getPokemon_entries());
-                pokedexRecycler.setAdapter(new PokedexAdapter(pokemonEntriesList));
+                pokedexRecycler.setAdapter(new PokedexAdapter(pokemonEntriesList, getApplicationContext()));
 
 //                List<String> pokemonEntries = new ArrayList<>();
 //                for (int i = 0; i <= 150; i++) {
