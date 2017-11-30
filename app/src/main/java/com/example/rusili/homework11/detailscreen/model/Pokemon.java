@@ -38,6 +38,10 @@ public class Pokemon {
     @SerializedName("types")
     private List<PokeType> pokeTypes = new ArrayList<>();
 
+    public Pokemon(String bulbasaur, String grass) {
+
+    }
+
 
 
 

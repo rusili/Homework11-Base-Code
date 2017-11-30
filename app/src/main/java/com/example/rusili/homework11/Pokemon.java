@@ -1,5 +1,7 @@
 package com.example.rusili.homework11;
 
+import java.util.List;
+
 /**
  * Created by c4q on 11/29/17.
  */
@@ -30,5 +32,16 @@ public class Pokemon {
 
     public void setType(String type) {
         this.type = type;
+    }
+    public String pokeTypesToString() {
+        String types = "";
+        List pokeTypes;
+        for (int i = 0; i < pokeTypes.size(); i++) {
+            if(i > 0)
+                types += ", ";
+            types += pokeTypes.get(i).getName();
+        }
+
+        return types;
     }
 }
