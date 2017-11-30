@@ -33,7 +33,7 @@ public class PokedexFragment extends Fragment {
 		pokedexNetworkListener = new RetrofitFactory.PokedexNetworkListener() {
 			@Override
 			public void pokedexCallback (Pokedex pokedex) {
-				// TODO: show Pokemon
+				// TODO: show com.example.rusili.homework11.Pokemon
 				// Each pokemon is in the Pokemon_Species object.
 			}
 		};

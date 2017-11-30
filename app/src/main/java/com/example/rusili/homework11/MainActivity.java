@@ -35,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
     private void addData() {
         Pokemon poke;
 
-        poke = new Pokemon("Bulbasaur", "Grama");
+        poke = new Pokemon("Bulbasaur", "Grass");
         pokemonList.add(poke);
 
-        poke = new Pokemon("Charmander", "Fogo");
+        poke = new Pokemon("Charmander", "Fire");
         pokemonList.add(poke);
 
-        poke = new Pokemon("Squirtle", "Água");
+        poke = new Pokemon("Squirtle", "Water");
         pokemonList.add(poke);
 
         pokemonAdapter.notifyDataSetChanged();

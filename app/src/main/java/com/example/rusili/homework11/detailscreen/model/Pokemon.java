@@ -1,32 +1,49 @@
 package com.example.rusili.homework11.detailscreen.model;
 
+import com.example.rusili.homework11.detailscreen.model.objects.PokeType;
+import com.example.rusili.homework11.detailscreen.model.objects.Sprites;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pokemon {
-	private String name;
-	private  String type;
+    @SerializedName("name")
+    private String name;
 
-	public Pokemon(String name, String type) {
-		this.name = name;
-		this.type = type;
-	}
+    @SerializedName("attack")
+    private Integer attack;
 
-	public String getName() {
-		return name;
-	}
+    @SerializedName("defense")
+    private Integer defense;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    @SerializedName("height")
+    private String height;
 
-	public String getType() {
-		return type;
-	}
+    @SerializedName("hp")
+    private Integer health;
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    @SerializedName("pkdx_id")
+    private Integer pokedexId;
+
+    @SerializedName("speed")
+    private Integer speed;
+
+    @SerializedName("weight")
+    private String weight;
+
+    @SerializedName("sprites")
+    private List<Sprites> sprites = new ArrayList<>();
+
+    @SerializedName("types")
+    private List<PokeType> pokeTypes = new ArrayList<>();
+
+
+
+
 	/*private Stats[] stats;
 	private Sprites sprites;
-	private Types[] types;
+	//private Types[] types;
 
 	//TODO: Create getters
 
