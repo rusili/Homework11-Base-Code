@@ -1,35 +1,23 @@
 package com.example.rusili.homework11;
 
-import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
-import com.example.rusili.homework11.controller.PokedexAdapter;
-import com.example.rusili.homework11.network.RetrofitFactory;
-import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
-import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import com.example.rusili.homework11.pokedexActivity.view.PokedexFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private RetrofitFactory.PokedexNetworkListener pokedexNetworkListener;
-    private RecyclerView pokedexRecycler;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pokedexRecycler = (RecyclerView) findViewById(R.id.pokedex_recyclerview);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        getPokedexList();
-        pokedexRecycler.setLayoutManager(gridLayoutManager);
+        pokedexFrag();
     }
+
 
     private void getPokedexList () {
         pokedexNetworkListener = new RetrofitFactory.PokedexNetworkListener() {
@@ -52,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
         };
         RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
         RetrofitFactory.getInstance().getPokedex(2);
+
+    private void pokedexFrag() {
+        PokedexFragment pokedexFragment = new PokedexFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_container, pokedexFragment);
+        fragmentTransaction.commit();
+        Log.d("main", "frag ran");
+
     }
 }
 

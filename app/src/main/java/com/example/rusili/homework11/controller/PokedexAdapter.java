@@ -11,13 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.rusili.homework11.R;
+
 import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.detailscreen.view.PokemonDetailActivity;
 import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
+
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
 import java.util.ArrayList;
@@ -38,6 +38,7 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
         this.pokemonEntriesList = pokemonEntriesList;
         this.context=context;
     }
+
 
     @Override
     public PokedexViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -74,7 +75,6 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
 
             }
         });
-
 
     }
 

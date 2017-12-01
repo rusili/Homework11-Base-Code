@@ -78,6 +78,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
 //
 //                ArrayList<String> list = new ArrayList<>();
 //
+
 //                list.add(pokemon.getStats());
 
 
@@ -133,3 +134,19 @@ public class PokemonDetailActivity extends AppCompatActivity{
         RetrofitFactory.getInstance().getPokemon(id);
     }
 }
+
+//	private void getPokemonDetails () {
+//		pokemonNetworkListener = new RetrofitFactory.PokemonNetworkListener() {
+//			@Override
+//			public void pokemonCallback (Pokemon pokemon) {
+//				//TODO: Display pokemon data
+//				//Hint: Learn how to use Glide to display an image.
+//
+//
+//			}
+//		};
+//		RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
+//		RetrofitFactory.getInstance().getPokemon(pokemonName);
+//	}
+//}
+
