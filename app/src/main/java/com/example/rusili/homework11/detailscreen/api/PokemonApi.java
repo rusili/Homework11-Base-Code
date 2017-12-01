@@ -1,6 +1,6 @@
 package com.example.rusili.homework11.detailscreen.api;
 
-import com.example.rusili.homework11.detailscreen.model.Pokemon;
+ import com.example.rusili.homework11.detailscreen.model.Pokemon;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
