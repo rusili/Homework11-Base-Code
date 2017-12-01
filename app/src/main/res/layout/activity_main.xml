@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rusili.homework11.MainActivity"
+    android:background="#6CC5F2">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="326dp"
+        android:layout_height="155dp"
+        app:srcCompat="@drawable/pokemon_logo"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/welcome_view"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Welcome To The PokéDex App!"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <Button
+        android:id="@+id/pokedex_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open PokéDex"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="360dp"
+        />
+
+    <ImageView
+        android:id="@+id/pokeball_view"
+        android:layout_width="175dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/pokeball"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="164dp"
+        tools:ignore="MissingConstraints" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -37,7 +37,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
                 Glide.with(context)
 
                        //TODO: find out the proper url to load & proper view to load into
-                        .load("http://via.placeholder.com/300.png")
+                        .load(pokemon.getSprites().getFront_default())
                         //TODO: Create View for image to load into
                         .into();
 
