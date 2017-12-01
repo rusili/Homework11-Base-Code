@@ -9,6 +9,12 @@ import com.example.rusili.homework11.pokedexActivity.model.objects.VersionGroups
  */
 
 public class Pokedex {
+
+    /**
+     * This is our data model for the pokedex fragment
+     * Refer back to this when creating the cardholder view in pokedex_frag_item_view
+     * */
+
     private int id;
     private Region region;
     private VersionGroups[] version_groups;

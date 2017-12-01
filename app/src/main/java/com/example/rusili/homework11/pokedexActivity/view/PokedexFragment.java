@@ -17,12 +17,13 @@ import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
  */
 
 public class PokedexFragment extends Fragment {
+
 	private RetrofitFactory.PokedexNetworkListener pokedexNetworkListener;
 
 	@Nullable
 	@Override
 	public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(//insert recycler_view xml here);
+		View view = inflater.inflate(R.layout.pokedex_fragment, container, false);
 
 		getPokedexList();
 
