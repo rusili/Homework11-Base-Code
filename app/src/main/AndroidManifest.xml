@@ -14,6 +14,8 @@
         <activity android:name=".detailscreen.view.PokemonDetailActivity">
 
         </activity>
+
+
         <activity android:name=".pokedexActivity.view.PokeDexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
