@@ -3,6 +3,7 @@ package com.example.rusili.homework11.detailscreen.view;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.detailscreen.model.Pokemon;
@@ -14,9 +15,9 @@ public class PokemonDetailActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView();
-
+        setContentView(R.layout.activity_pokemon_detail);
         initialize();
+//        RecyclerView pokedexRecyclerView = (RecyclerView) findViewById(R.id.pokedex_recyclerview);
     }
 
     private void initialize() {
@@ -30,9 +31,10 @@ public class PokemonDetailActivity extends AppCompatActivity {
                 //TODO: Display pokemon data
                 //Hint: Learn how to use Glide to display an image.
                 //do some more code
+
             }
         };
         RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
-        RetrofitFactory.getInstance().getPokemon(pokemonName);
+        RetrofitFactory.getInstance().getPokemon("1");
     }
 }
