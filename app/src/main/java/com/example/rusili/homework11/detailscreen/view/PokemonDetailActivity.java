@@ -30,8 +30,8 @@
 //			public void pokemonCallback (Pokemon pokemon) {
 //				//TODO: Display pokemon data
 //				//Hint: Learn how to use Glide to display an image.
-
-
+//
+//
 //			}
 //		};
 //		RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);

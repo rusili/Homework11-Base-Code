@@ -8,10 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.rusili.homework11.R;
-import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
 import java.util.List;
@@ -30,6 +27,7 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
         this.pokemonEntriesList = pokemonEntriesList;
     }
 
+
     @Override
     public PokedexViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pokedex_itemview, parent, false);
@@ -40,7 +38,6 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
     public void onBindViewHolder(PokedexViewHolder holder, int position) {
         PokemonEntries pokemonEntries = pokemonEntriesList.get(position);
         holder.pokedexText.setText(pokemonEntries.getPokemon_species().getName());
-
 
     }
 
