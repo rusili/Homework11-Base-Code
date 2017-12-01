@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
+import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
 /**
  * Created by rusi.li on 11/22/17.
@@ -34,6 +35,11 @@ public class PokedexFragment extends Fragment {
 			@Override
 			public void pokedexCallback (Pokedex pokedex) {
 				// TODO: show Pokemon
+//				pokedex.getId();
+//				pokedex.getPokemon_entries();
+//				pokedex.getRegion();
+//				pokedex.getVersion_groups();
+//
 				// Each pokemon is in the Pokemon_Species object.
 			}
 		};
