@@ -8,7 +8,7 @@
     tools:context="com.example.rusili.homework11.pokedexActivity.view.PokedexFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/fragment_recyclerview_layout"
+        android:id="@+id/recycler_view_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

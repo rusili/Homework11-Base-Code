@@ -9,13 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.rusili.homework11.R;
-import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
-import com.example.rusili.homework11.util.Host;
 
 /**
  * Modified by Murad & Chelsi on 11/30/17.
@@ -28,8 +25,8 @@ public class PokedexFragment extends Fragment {
 	@Nullable
 	@Override
 	public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_layout, container, false);
-		RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.fragment_recyclerview_layout);
+		View view = inflater.inflate(R.layout.recycler_view_layout, container, false);
+		RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view_layout);
 
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
 		adapter = new PokemonAdapter();

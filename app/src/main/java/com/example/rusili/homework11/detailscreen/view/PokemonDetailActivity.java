@@ -18,11 +18,15 @@ import com.squareup.picasso.Picasso;
 public class PokemonDetailActivity extends AppCompatActivity{
 	private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
 	private String pokemonName;
+	private ImageView cardImage;
 
 	@Override
 	public void onCreate (@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pokemon_layout);
+
+		cardImage = findViewById(R.id.card_image);
+
 
 		Intent intent = getIntent();
 		pokemonName = intent.getStringExtra(PokemonViewHolder.POK_KEY);
@@ -67,22 +71,22 @@ public class PokemonDetailActivity extends AppCompatActivity{
 
 				Picasso.with(PokemonDetailActivity.this).load(sprites.getFront_default()).into(imageView);
 
-				textView1.setText(stats[0].getStat().getName());
+				textView1.setText(stats[0].getStat().getName() + ":");
 				textView2.setText(info);
 
-				textView3.setText(stats[1].getStat().getName());
+				textView3.setText(stats[1].getStat().getName() + ":");
 				textView4.setText(info1);
 
-				textView5.setText(stats[2].getStat().getName());
+				textView5.setText(stats[2].getStat().getName() + ":");
 				textView6.setText(info2);
 
-				textView7.setText(stats[3].getStat().getName());
+				textView7.setText(stats[3].getStat().getName() + ":");
 				textView8.setText(info3);
 
-				textView9.setText(stats[4].getStat().getName());
+				textView9.setText(stats[4].getStat().getName() + ":");
 				textView10.setText(info4);
 
-				textView11.setText(stats[5].getStat().getName());
+				textView11.setText(stats[5].getStat().getName() + ":");
 				textView12.setText(info5);
 			}
 		};

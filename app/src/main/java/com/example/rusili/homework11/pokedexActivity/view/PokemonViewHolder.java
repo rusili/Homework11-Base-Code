@@ -29,7 +29,7 @@ public class PokemonViewHolder extends RecyclerView.ViewHolder{
 
     }
     public void onBind(final PokemonEntries pokemonEntries) {
-        textView.setText("Name: " + pokemonEntries.getPokemon_species().getName());
+        textView.setText(pokemonEntries.getPokemon_species().getName());
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
                    public void onClick(View v) {

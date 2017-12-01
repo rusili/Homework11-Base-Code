@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".detailscreen.view.PokemonDetailActivity"/>
-        <activity android:name=".pokedexActivity.view.MainActivity">
+        <activity android:name=".detailscreen.view.PokemonDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".pokedexActivity.view.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
