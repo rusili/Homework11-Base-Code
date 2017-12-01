@@ -9,6 +9,9 @@ import com.example.rusili.homework11.pokedexActivity.api.PokedexApi;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.util.Host;
 
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,86 +22,99 @@ import retrofit2.converter.gson.GsonConverterFactory;
 // DO NOT TOUCH
 //
 public class RetrofitFactory {
-	private static RetrofitFactory retrofitFactory;
+    private static RetrofitFactory retrofitFactory;
 
-	private Retrofit retrofit;
-	private PokedexNetworkListener pokedexNetworkListener = null;
-	private PokemonNetworkListener pokemonNetworkListener = null;
+    private Retrofit retrofit;
+    private PokedexNetworkListener pokedexNetworkListener = null;
+    private PokemonNetworkListener pokemonNetworkListener = null;
 
-	public static RetrofitFactory getInstance () {
-		if (retrofitFactory == null) {
-			retrofitFactory = new RetrofitFactory();
-		}
-		return retrofitFactory;
-	}
+    public static RetrofitFactory getInstance() {
+        if (retrofitFactory == null) {
+            retrofitFactory = new RetrofitFactory();
+        }
+        return retrofitFactory;
+    }
 
-	public void setPokedexListener (PokedexNetworkListener pokedexNetworkListener) {
-		this.pokedexNetworkListener = pokedexNetworkListener;
-	}
+    public void setPokedexListener(PokedexNetworkListener pokedexNetworkListener) {
+        this.pokedexNetworkListener = pokedexNetworkListener;
+    }
 
-	public void setPokemonNetworkListener (PokemonNetworkListener pokemonNetworkListener) {
-		this.pokemonNetworkListener = pokemonNetworkListener;
-	}
+    public void setPokemonNetworkListener(PokemonNetworkListener pokemonNetworkListener) {
+        this.pokemonNetworkListener = pokemonNetworkListener;
+    }
 
-	private Retrofit buildRetrofit () {
-		if (retrofit == null) {
-			retrofit = new Retrofit.Builder()
-				  .baseUrl(Host.PokeAPI.getUrl())
-				  .addConverterFactory(GsonConverterFactory.create())
-				  .build();
-		}
-		return retrofit;
-	}
+    private Retrofit buildRetrofit() {
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(Host.PokeAPI.getUrl())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(createOkHttpClient())
+                    .build();
+        }
+        return retrofit;
+    }
 
-	public void getPokedex (int id) {
-		PokedexApi pokedexService = buildRetrofit().create(PokedexApi.class);
-		Call <Pokedex> getServiceResponse = pokedexService.getPokedex(id);
-		getServiceResponse.enqueue(new Callback <Pokedex>() {
-			@Override
-			public void onResponse (@NonNull Call <Pokedex> call, @NonNull Response <Pokedex> response) {
-				if (response.isSuccessful()) {
-					Log.d("onResponse: ", "Successful");
+    private OkHttpClient createOkHttpClient() {
+        return new OkHttpClient.Builder()
+                .connectTimeout(5, TimeUnit.SECONDS)
+                .writeTimeout(5, TimeUnit.SECONDS)
+                .readTimeout(5, TimeUnit.SECONDS)
+                .build();
+    }
 
-					if (pokedexNetworkListener != null) {
-						pokedexNetworkListener.pokedexCallback(response.body());
-					}
-				}
-			}
+    public void getPokedex(int id) {
+        PokedexApi pokedexService = buildRetrofit().create(PokedexApi.class);
+        Call<Pokedex> getServiceResponse = pokedexService.getPokedex(id);
+        getServiceResponse.enqueue(new Callback<Pokedex>() {
+            @Override
+            public void onResponse(@NonNull Call<Pokedex> call, @NonNull Response<Pokedex> response) {
+                if (response.isSuccessful()) {
+                    Log.d("onResponse: ", "Successful");
 
-			@Override
-			public void onFailure (@NonNull Call <Pokedex> call, @NonNull Throwable t) {
-				Log.e("onFailure: ", t.getMessage());
-			}
-		});
-	}
+                    if (pokedexNetworkListener != null) {
+                        pokedexNetworkListener.pokedexCallback(response.body());
+                    }
+                }
+            }
 
-	public void getPokemon (String name) {
-		PokemonApi pokedexService = buildRetrofit().create(PokemonApi.class);
-		Call <Pokemon> getServiceResponse = pokedexService.getPokemon(name);
-		getServiceResponse.enqueue(new Callback <Pokemon>() {
-			@Override
-			public void onResponse (@NonNull Call <Pokemon> call, @NonNull Response <Pokemon> response) {
-				if (response.isSuccessful()) {
-					Log.d("onResponse: ", "Successful");
+            @Override
+            public void onFailure(@NonNull Call<Pokedex> call, @NonNull Throwable t) {
+                Log.e("onFailure: ", t.getMessage());
+                pokedexNetworkListener.onNetworkError(t);
+            }
+        });
+    }
 
-					if (pokemonNetworkListener != null) {
-						pokemonNetworkListener.pokemonCallback(response.body());
-					}
-				}
-			}
+    public void getPokemon(String name) {
+        PokemonApi pokedexService = buildRetrofit().create(PokemonApi.class);
+        Call<Pokemon> getServiceResponse = pokedexService.getPokemon(name);
+        getServiceResponse.enqueue(new Callback<Pokemon>() {
+            @Override
+            public void onResponse(@NonNull Call<Pokemon> call, @NonNull Response<Pokemon> response) {
+                if (response.isSuccessful()) {
+                    Log.d("onResponse: ", "Successful");
 
-			@Override
-			public void onFailure (@NonNull Call <Pokemon> call, @NonNull Throwable t) {
-				Log.e("onFailure: ", t.getMessage());
-			}
-		});
-	}
+                    if (pokemonNetworkListener != null) {
+                        pokemonNetworkListener.pokemonCallback(response.body());
+                    }
+                }
+            }
 
-	public interface PokedexNetworkListener {
-		void pokedexCallback (Pokedex pokedex);
-	}
+            @Override
+            public void onFailure(@NonNull Call<Pokemon> call, @NonNull Throwable t) {
+                Log.e("onFailure: ", t.getMessage());
+                pokemonNetworkListener.onNetworkError(t);
+            }
+        });
+    }
 
-	public interface PokemonNetworkListener {
-		void pokemonCallback (Pokemon pokemon);
-	}
+    public interface PokedexNetworkListener {
+        void pokedexCallback(Pokedex pokedex);
+        void onNetworkError(Throwable t);
+    }
+
+    public interface PokemonNetworkListener {
+        void pokemonCallback(Pokemon pokemon);
+        void onNetworkError(Throwable t);
+    }
 }
