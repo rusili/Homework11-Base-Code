@@ -41,6 +41,21 @@ public class Pokemon {
     public Pokemon(String bulbasaur, String grass) {
 
     }
+    public String pokeTypesToString() {
+        String types = "";
+        for (int i = 0; i < pokeTypes.size(); i++) {
+            if(i > 0)
+                types += ", ";
+            types += pokeTypes.get(i).getName();
+        }
+
+        return types;
+    }
+
+    public String getName() {
+        return name;
+    }
+
 
 
 

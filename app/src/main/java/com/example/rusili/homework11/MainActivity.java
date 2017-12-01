@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(pokemonAdapter);
     }
     private void addData() {
+
         Pokemon poke;
 
         poke = new Pokemon("Bulbasaur", "Grass");
