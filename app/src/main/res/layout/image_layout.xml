@@ -3,12 +3,135 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:orientation="vertical"
+    >
 
 
-    <ImageView
-        android:id="@+id/pokemonimage_ImageView"
-        android:layout_width="96dp"
-        android:layout_height="96dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="@color/colorRed"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/pokemonimage_ImageView"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="Stats"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/titleTextView"/>
+            <TextView
+
+                android:id="@+id/statsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="Type"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/titleTextView"/>
+
+            <TextView
+                android:id="@+id/typeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <ProgressBar
+            android:id="@+id/simpleProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="false"
+            android:max="100"
+            android:minHeight="50dp"
+            android:minWidth="200dp"
+            android:progress="1"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/averageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="50%"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="@dimen/titleTextView"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Average Power"
+            android:textColor="@color/colorRed"
+            android:gravity="center"
+            android:textSize="@dimen/titleTextView"
+            />
+
+
+
+
+    </LinearLayout>
 
 </LinearLayout>

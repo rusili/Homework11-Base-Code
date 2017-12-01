@@ -20,6 +20,7 @@ import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +32,7 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
 
     private List<PokemonEntries> pokemonEntriesList;
     private Context context;
+
 
     public PokedexAdapter(List<PokemonEntries> pokemonEntriesList, Context context) {
         this.pokemonEntriesList = pokemonEntriesList;
@@ -48,18 +50,18 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
         PokemonEntries pokemonEntries = pokemonEntriesList.get(position);
         final String pokemonName= pokemonEntries.getPokemon_species().getName();
         holder.pokedexText.setText(pokemonName);
-        RetrofitFactory.getInstance().setPokemonNetworkListener(new RetrofitFactory.PokemonNetworkListener() {
-            @Override
-            public void pokemonCallback(Pokemon pokemon) {
-                System.out.println(pokemonName + " " + pokemon.getSprites().getBack_default());
-                Glide.with(context)
-                        .load(pokemon.getSprites().getBack_default())
-                        .into(holder.image);
 
-                //Glide.with(holder.pokedexView).load(pokemon.getSprites().getFront_default()).into((ImageView) R.id.pokedex_imageview);
-            }
-        });
-        RetrofitFactory.getInstance().getPokemon(pokemonName);
+//        RetrofitFactory.getInstance().setPokemonNetworkListener(new RetrofitFactory.PokemonNetworkListener() {
+//            @Override
+//            public void pokemonCallback(Pokemon pokemon) {
+//                System.out.println(pokemonName + " " + pokemon.getSprites().getBack_default());
+//
+//                Glide.with(context)
+//                        .load(pokemon.getSprites().getBack_default())
+//                        .into(holder.image);
+//            }
+//        });
+//        RetrofitFactory.getInstance().getPokemon(pokemonName);
 
         //Onclick listener
         holder.layout.setOnClickListener(new View.OnClickListener() {
