@@ -10,13 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.controller.PokemonAdapter;
 import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,13 +26,18 @@ public class PokedexFragment extends Fragment {
 	private static final String TAG = "PokedexFrag";
 	private RetrofitFactory.PokedexNetworkListener pokedexNetworkListener;
 	private RecyclerView recyclerView;
+	private PokemonAdapter pokemonAdapter;
 
 	@Nullable
 	@Override
 	public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_layout, container, false);
+		pokemonAdapter = new PokemonAdapter();
 		getPokedexList();
 		recyclerView = view.findViewById(R.id.recyclerView);
+		LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+		recyclerView.setAdapter(pokemonAdapter);
+		recyclerView.setLayoutManager(layoutManager);
 		return view;
 	}
 
@@ -50,11 +53,9 @@ public class PokedexFragment extends Fragment {
 					pokemonList.add(pokedex.getPokemon_entries()[i]);
 					Log.d("pokemon", "" + pokemonList.size());
 				}
-				PokemonAdapter pokemonAdapter = new PokemonAdapter();
+
 				pokemonAdapter.addPokemonList(pokemonList);
-				recyclerView.setAdapter(pokemonAdapter);
-				final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-				recyclerView.setLayoutManager(layoutManager);
+
 			}
 		};
 
