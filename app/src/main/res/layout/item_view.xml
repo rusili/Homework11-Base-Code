@@ -10,6 +10,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@android:color/black"
 
 
     >
@@ -30,11 +31,16 @@
         <android.support.v7.widget.CardView
             android:layout_width="145dp"
             android:layout_height="175dp"
-            app:cardBackgroundColor="@color/Golden"
+
             app:cardCornerRadius="30dp"
             app:cardUseCompatPadding="true"
+            android:background="@android:color/black"
 
             >
+            <ImageView
+                android:id="@+id/pokemon_images"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/pokedex_name"
@@ -42,7 +48,6 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Pokemon Names"
-                android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
