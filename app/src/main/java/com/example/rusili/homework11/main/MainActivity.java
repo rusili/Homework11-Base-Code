@@ -23,54 +23,71 @@ import java.util.List;
  */
 
 public class MainActivity extends AppCompatActivity {
-
     List<PokemonEntries> myPokemonList;
+    RecyclerView pokemonRecyclerView;
+    LinearLayoutManager linearLayoutManager;
+    PokemonAdapter pokemonAdapter;
+
     final String TAG = MainActivity.class.getSimpleName();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
 
-        myPokemonList = new ArrayList<>();
+
+        pokemonRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+
+
+
         getPokedexList();
+        pokemonAdapter = new PokemonAdapter(myPokemonList);
 
 
-        RecyclerView pokemonRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
-        PokemonAdapter pokemonAdapter = new PokemonAdapter(myPokemonList);
-
-        pokemonRecyclerView.setAdapter(pokemonAdapter);
         pokemonRecyclerView.setLayoutManager(linearLayoutManager);
 
 
-    }
 
 
-    public List<Pokemon> populateList(){
-        List<Pokemon> myList = new ArrayList<>();
 
-        return myList;
-    }
 
-    private void getPokedexList () {
-         RetrofitFactory.PokedexNetworkListener pokedexNetworkListener = new RetrofitFactory.PokedexNetworkListener() {
+
+
+
+}
+    private void getPokedexList() {
+        myPokemonList = new ArrayList<>();
+
+        RetrofitFactory.PokedexNetworkListener pokedexNetworkListener = new RetrofitFactory.PokedexNetworkListener() {
             @Override
-            public void pokedexCallback (Pokedex pokedex) {
+            public void pokedexCallback(Pokedex pokedex) {
 
                 for (int i = 0; i < 150; i++) {
-                    //Log.d("pokemon", "" + pokedex.getPokemon_entries()[i].getPokemon_species().getName());
                     myPokemonList.add(pokedex.getPokemon_entries()[i]);
-                    Log.d(TAG, "" + myPokemonList.size());
+                    Log.d("pokemon", "" + pokedex.getPokemon_entries()[i].getPokemon_species().getName());
+
+                    Log.d("pokemon", "SIZE" + myPokemonList.size());
                 }
 
             }
         };
         RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
         RetrofitFactory.getInstance().getPokedex(2);
+
+
+        pokemonRecyclerView.setAdapter(pokemonAdapter);
+
+
+
     }
-
-
 }
+
+
+
+
+
+
+
