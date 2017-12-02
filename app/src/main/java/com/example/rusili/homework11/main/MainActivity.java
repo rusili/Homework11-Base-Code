@@ -9,17 +9,12 @@ import android.util.Log;
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.RecyclerViewPackage.controller.PokemonAdapter;
 import com.example.rusili.homework11.RecyclerViewPackage.model.Pokemon;
-import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Retrofit;
-
 
 
 /**
@@ -35,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         final String TAG = MainActivity.class.getSimpleName();
 
-        List<Pokemon> myPokemonList = new ArrayList<>();
+        List<PokemonEntries> myPokemonList = new ArrayList<>();
+        Pokedex pokedex = new Pokedex();
 
         RecyclerView pokemonRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
@@ -44,14 +40,13 @@ public class MainActivity extends AppCompatActivity {
         pokemonRecyclerView.setAdapter(pokemonAdapter);
         pokemonRecyclerView.setLayoutManager(linearLayoutManager);
 
-
-
-
-
-
-
-
+        for (int i = 0; i < 150; i++) {
+            //Log.d("pokemon", "" + pokedex.getPokemon_entries()[i].getPokemon_species().getName());
+            myPokemonList.add(pokedex.getPokemon_entries()[i]);
+            Log.d(TAG, "" + myPokemonList.size());
+        }
     }
+
 
     public List<Pokemon> populateList(){
         List<Pokemon> myList = new ArrayList<>();

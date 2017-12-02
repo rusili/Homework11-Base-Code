@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 
 import com.example.rusili.homework11.RecyclerViewPackage.model.Pokemon;
 import com.example.rusili.homework11.RecyclerViewPackage.view.PokemonViewHolder;
+import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
 import java.util.List;
 
@@ -14,9 +15,9 @@ import java.util.List;
 
 public class PokemonAdapter extends RecyclerView.Adapter<PokemonViewHolder> {
 
-    List<Pokemon> myPokemonList;
+    List<PokemonEntries> myPokemonList;
 
-    public PokemonAdapter(List<Pokemon> myPokemonList) {
+    public PokemonAdapter(List<PokemonEntries> myPokemonList) {
         this.myPokemonList = myPokemonList;
     }
 
