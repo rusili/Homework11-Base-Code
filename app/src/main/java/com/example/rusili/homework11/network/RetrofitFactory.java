@@ -68,7 +68,8 @@ public class RetrofitFactory {
 			@Override
 			public void onFailure (@NonNull Call <Pokedex> call, @NonNull Throwable t) {
 				Log.e("onFailure: ", t.getMessage());
-			}
+                pokedexNetworkListener.onNetworkError(t);
+            }
 		});
 	}
 
@@ -90,15 +91,18 @@ public class RetrofitFactory {
 			@Override
 			public void onFailure (@NonNull Call <Pokemon> call, @NonNull Throwable t) {
 				Log.e("onFailure: ", t.getMessage());
+				pokemonNetworkListener.onNetworkError(t);
 			}
 		});
 	}
 
 	public interface PokedexNetworkListener {
 		void pokedexCallback (Pokedex pokedex);
+		void onNetworkError(Throwable t);
 	}
 
 	public interface PokemonNetworkListener {
 		void pokemonCallback (Pokemon pokemon);
-	}
+        void onNetworkError(Throwable t);
+    }
 }
