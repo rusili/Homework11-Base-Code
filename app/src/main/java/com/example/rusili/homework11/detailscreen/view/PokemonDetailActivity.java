@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,8 +36,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
 	}
 
 	private void initialize () {
-		bundle = getIntent().getExtras();
-		pokemonName = bundle.getString("pokemon");
+		pokemonName = getIntent().getStringExtra("pokemon");
 		instantiateViews();
 		getPokemonDetails();
 	}
@@ -47,8 +47,11 @@ public class PokemonDetailActivity extends AppCompatActivity{
 			public void pokemonCallback (Pokemon pokemon) {
 				//TODO: Display pokemon data
 				//Hint: Learn how to use Glide to display an image.
+				Log.d("WhatPokemon",pokemon.getSprites().getFront_default());
 
-				imageURL = pokemon.getSprites().getBack_default();
+
+				imageURL = pokemon.getSprites().getFront_default();
+				Log.d("ImageUrl",imageURL);
 				Glide.with(context)
 						.load(imageURL)
 						.into(pokeImage);

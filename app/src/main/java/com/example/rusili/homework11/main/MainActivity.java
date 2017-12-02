@@ -3,6 +3,7 @@ package com.example.rusili.homework11.main;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -38,24 +39,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
         pokemonRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-
-
-
+        linearLayoutManager = new GridLayoutManager(getApplicationContext(),4,GridLayoutManager.VERTICAL, false);
         getPokedexList();
         pokemonAdapter = new PokemonAdapter(myPokemonList);
         pokemonRecyclerView.setLayoutManager(linearLayoutManager);
-
-
-
-
-
-
-
 
 
 }
@@ -69,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < 150; i++) {
                     myPokemonList.add(pokedex.getPokemon_entries()[i]);
                     Log.d("pokemon", "" + pokedex.getPokemon_entries()[i].getPokemon_species().getName());
-
                     Log.d("pokemon", "SIZE" + myPokemonList.size());
                 }
 
@@ -84,11 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
         RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
         RetrofitFactory.getInstance().getPokedex(2);
-
-
-
-
-
 
     }
 }
