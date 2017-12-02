@@ -10,6 +10,8 @@ import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.detailscreen.model.objects.Sprites;
 import com.example.rusili.homework11.detailscreen.model.objects.Stats;
+import com.example.rusili.homework11.detailscreen.model.objects.Type;
+import com.example.rusili.homework11.detailscreen.model.objects.Types;
 import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.view.PokemonViewHolder;
 import com.squareup.picasso.Picasso;
@@ -53,9 +55,15 @@ public class PokemonDetailActivity extends AppCompatActivity{
 				TextView textView10 = findViewById(R.id.pokemon_text10);
 				TextView textView11 = findViewById(R.id.pokemon_text11);
 				TextView textView12 = findViewById(R.id.pokemon_text12);
+				TextView typeTextView = findViewById(R.id.pokemon_type);
 
 				Stats[] stats = pokemon.getStats();
 				Sprites sprites = pokemon.getSprites();
+
+				Types[] types = pokemon.getTypes();
+				Types slot = types[0];
+				Type type = slot.getType();
+				String typeName = type.getName();
 
 				String info =String.valueOf(stats[0].getBase_stat());
 				String info1 =String.valueOf(stats[1].getBase_stat());
@@ -83,6 +91,8 @@ public class PokemonDetailActivity extends AppCompatActivity{
 
 				textView11.setText(stats[5].getStat().getName() + ":");
 				textView12.setText(info5);
+
+				typeTextView.setText("ability: " + typeName);
 			}
 		};
 
