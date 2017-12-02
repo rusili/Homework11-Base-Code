@@ -9,16 +9,11 @@ import com.example.rusili.homework11.pokedexActivity.model.objects.VersionGroups
  */
 
 public class Pokedex {
-    private int id;
     private Region region;
     private VersionGroups[] version_groups;
     private PokemonEntries[] pokemon_entries;
 
     //TODO: Create getters
-
-    public int getId() {
-        return id;
-    }
 
     public Region getRegion() {
         return region;
