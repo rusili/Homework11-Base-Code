@@ -11,9 +11,34 @@
         android:layout_height="250dp" />
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/pokemon_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/wight"
+            android:textStyle="italic"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/pokemon_slot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -21,14 +46,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/pokemon_text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -43,14 +68,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/pokemon_text4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -65,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/pokemon_text6"
@@ -87,14 +112,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/pokemon_text8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -109,14 +134,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/pokemon_text10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -131,14 +156,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/pokemon_text12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/red"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
 </LinearLayout>
 

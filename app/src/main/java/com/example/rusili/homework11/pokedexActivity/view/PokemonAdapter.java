@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.rusili.homework11.R;
-import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
 /**
