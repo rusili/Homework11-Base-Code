@@ -48,8 +48,6 @@ public class PokedexFragment extends Fragment {
 				adapter.setData(pokedex.getPokemon_entries());
 
 
-
-
 			}
 		};
 		RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);

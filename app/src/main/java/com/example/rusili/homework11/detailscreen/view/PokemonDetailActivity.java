@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.detailscreen.model.objects.Sprites;
@@ -18,15 +17,11 @@ import com.squareup.picasso.Picasso;
 public class PokemonDetailActivity extends AppCompatActivity{
 	private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
 	private String pokemonName;
-	private ImageView cardImage;
 
 	@Override
 	public void onCreate (@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pokemon_layout);
-
-		cardImage = findViewById(R.id.card_image);
-
 
 		Intent intent = getIntent();
 		pokemonName = intent.getStringExtra(PokemonViewHolder.POK_KEY);
