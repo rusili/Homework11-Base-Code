@@ -1,6 +1,7 @@
 package com.example.rusili.homework11.main;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,8 @@ import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntrie
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.app.PendingIntent.getActivity;
 
 
 /**
@@ -45,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         getPokedexList();
         pokemonAdapter = new PokemonAdapter(myPokemonList);
-
-
         pokemonRecyclerView.setLayoutManager(linearLayoutManager);
 
 
@@ -72,13 +73,20 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("pokemon", "SIZE" + myPokemonList.size());
                 }
 
+                pokemonRecyclerView.setAdapter(pokemonAdapter);
+
+            }
+            @Override
+            public void onNetworkError(Throwable t) {
+                Snackbar.make(findViewById(android.R.id.content), t.getMessage(), Snackbar.LENGTH_LONG).show();
             }
         };
+
         RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
         RetrofitFactory.getInstance().getPokedex(2);
 
 
-        pokemonRecyclerView.setAdapter(pokemonAdapter);
+
 
 
 

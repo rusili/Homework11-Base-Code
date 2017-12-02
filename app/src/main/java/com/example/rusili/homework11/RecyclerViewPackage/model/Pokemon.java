@@ -7,9 +7,19 @@ package com.example.rusili.homework11.RecyclerViewPackage.model;
 public class Pokemon {
 
     private String pokemonName;
+    private String url;
 
-    public Pokemon(String pokemonName) {
+    public Pokemon(String pokemonName,String url) {
         this.pokemonName = pokemonName;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getPokemonName() {
