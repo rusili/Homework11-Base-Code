@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.RecyclerViewPackage.model.Pokemon;
+import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
 /**
  * Created by Shant on 11/29/2017.
@@ -20,7 +21,7 @@ public class PokemonViewHolder extends RecyclerView.ViewHolder{
         pokemonName = itemView.findViewById(R.id.pokemon_name_text_view);
     }
 
-    public void onBind(Pokemon pokemon){
-        pokemonName.setText(pokemon.getPokemonName());
+    public void onBind(PokemonEntries pokemon){
+        pokemonName.setText(pokemon.getPokemon_species().getName());
     }
 }
