@@ -18,6 +18,7 @@ import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 
 public class PokedexFragment extends Fragment {
 	private RetrofitFactory.PokedexNetworkListener pokedexNetworkListener;
+	private Pokedex pokedex;
 
 	@Nullable
 	@Override
@@ -29,14 +30,29 @@ public class PokedexFragment extends Fragment {
 		return view;
 	}
 
+	public Pokedex getPokedex() {
+		return pokedex;
+	}
+
+	public void setPokedex(Pokedex pokedex) {
+		this.pokedex = pokedex;
+	}
+
 	private void getPokedexList () {
 		pokedexNetworkListener = new RetrofitFactory.PokedexNetworkListener() {
 			@Override
 			public void pokedexCallback (Pokedex pokedex) {
 				// TODO: show Pokemon
+				setPokedex(pokedex);
+//						.load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/")
+//						.override(300, 200)
+//						.into(pokemonPic);
 				// Each pokemon is in the Pokemon_Species object.
+
 			}
 		};
+
+
 		RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
 		RetrofitFactory.getInstance().getPokedex(2);
 	}
