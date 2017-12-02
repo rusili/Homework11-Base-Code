@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Homework11-Base-Code.iml" filepath="$PROJECT_DIR$/Homework11-Base-Code.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Pokemon.iml" filepath="$PROJECT_DIR$/.idea/Pokemon.iml" />
+      <module fileurl="file://C:\Users\Chelsi\Pokemon\Homework11-Base-Code.iml" filepath="C:\Users\Chelsi\Pokemon\Homework11-Base-Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pokemon.iml" filepath="$PROJECT_DIR$/Pokemon.iml" />
+      <module fileurl="file://C:\Users\Chelsi\Pokemon\.idea\Pokemon.iml" filepath="C:\Users\Chelsi\Pokemon\.idea\Pokemon.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Chelsi\Pokemon\app\app.iml" filepath="C:\Users\Chelsi\Pokemon\app\app.iml" />
     </modules>
   </component>
 </project>
