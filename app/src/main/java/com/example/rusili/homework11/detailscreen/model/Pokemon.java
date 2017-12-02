@@ -1,80 +1,36 @@
 package com.example.rusili.homework11.detailscreen.model;
 
-import com.example.rusili.homework11.detailscreen.model.objects.PokeType;
 import com.example.rusili.homework11.detailscreen.model.objects.Sprites;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.rusili.homework11.detailscreen.model.objects.Stats;
+import com.example.rusili.homework11.detailscreen.model.objects.Types;
 
 public class Pokemon {
-    @SerializedName("name")
-    private String name;
 
-    @SerializedName("attack")
-    private Integer attack;
+	private Stats[] stats;
+	private Sprites sprites;
+	private Types[] types;
 
-    @SerializedName("defense")
-    private Integer defense;
-
-    @SerializedName("height")
-    private String height;
-
-    @SerializedName("hp")
-    private Integer health;
-
-    @SerializedName("pkdx_id")
-    private Integer pokedexId;
-
-    @SerializedName("speed")
-    private Integer speed;
-
-    @SerializedName("weight")
-    private String weight;
-
-    @SerializedName("sprites")
-    private List<Sprites> sprites = new ArrayList<>();
-
-    @SerializedName("types")
-    private List<PokeType> pokeTypes = new ArrayList<>();
-
-    public Pokemon(String bulbasaur, String grass) {
-
+    public Stats[] getStats() {
+        return stats;
     }
-    public String pokeTypesToString() {
-        String types = "";
-        for (int i = 0; i < pokeTypes.size(); i++) {
-            if(i > 0)
-                types += ", ";
-            types += pokeTypes.get(i).getName();
-        }
 
+    public void setStats(Stats[] stats) {
+        this.stats = stats;
+    }
+
+    public Sprites getSprites() {
+        return sprites;
+    }
+
+    public void setSprites(Sprites sprites) {
+        this.sprites = sprites;
+    }
+
+    public Types[] getTypes() {
         return types;
     }
 
-    public String getName() {
-        return name;
+    public void setTypes(Types[] types) {
+        this.types = types;
     }
-
-
-
-
-
-	/*private Stats[] stats;
-	private Sprites sprites;
-	//private Types[] types;
-
-	//TODO: Create getters
-
-	public Stats[] getStats() {
-		return stats;
-	}
-
-	public Sprites getSprites() {
-		return sprites;
-	}
-
-	public Types[] getTypes() {
-		return types;
-	}*/
 }
