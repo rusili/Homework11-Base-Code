@@ -1,6 +1,7 @@
 package com.example.rusili.homework11.RecyclerViewPackage.view;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ public class PokemonViewHolder extends RecyclerView.ViewHolder{
     }
 
     public void onBind(PokemonEntries pokemon){
+        Log.d("pokemon",pokemon.getPokemon_species().getName());
         pokemonName.setText(pokemon.getPokemon_species().getName());
     }
 }
