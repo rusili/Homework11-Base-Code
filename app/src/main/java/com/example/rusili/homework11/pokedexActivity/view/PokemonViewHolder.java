@@ -29,7 +29,7 @@ class PokemonViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
 
         pokemonName = itemView.findViewById(R.id.name_view);
-        imageView = itemView.findViewById(R.id.igit temv_image);
+        imageView = itemView.findViewById(R.id.itemv_image);
         cardView = itemView.findViewById(R.id.card_view);
 
         cardView.setOnClickListener(new View.OnClickListener() {
