@@ -1,11 +1,16 @@
 package com.example.rusili.homework11.pokedexActivity.view;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.rusili.homework11.R;
+import com.example.rusili.homework11.detailscreen.view.PokemonDetailActivity;
+import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 
 public class PokeDexActivity extends AppCompatActivity {
 
@@ -24,5 +29,12 @@ public class PokeDexActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void selectPokemon(View view){
+        Intent intent = new Intent(this, PokemonDetailActivity.class);
+        String pokemonId = ((TextView)view).getText().toString();
+        intent.putExtra(PokedexFragment.intentKey,pokemonId);
+        startActivity(intent);
     }
 }
