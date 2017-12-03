@@ -4,7 +4,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
@@ -14,6 +16,7 @@ import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntrie
 
 public class PokemonAdapter extends RecyclerView.Adapter<PokemonViewHolder> {
     private PokemonEntries[] pokemonEntries;
+
 
     public PokemonAdapter() {}
 
@@ -26,6 +29,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonViewHolder> {
     public PokemonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View childView = LayoutInflater.from(parent.getContext()).inflate(R.layout.pokemon_itemview, parent, false);
         return new PokemonViewHolder(childView);
+
     }
 
     @Override
@@ -33,6 +37,8 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonViewHolder> {
         if (pokemonEntries != null) {
             PokemonEntries pokemonEntries1 = pokemonEntries[position];
             holder.onBind(pokemonEntries1);
+
+
         }
 
     }

@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/wight"
-            android:textStyle="italic"
+            android:textStyle="italic|bold"
             android:textSize="24sp" />
 
         <TextView

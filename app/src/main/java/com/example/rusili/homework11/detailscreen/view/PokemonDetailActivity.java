@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.rusili.homework11.R;
@@ -16,6 +17,8 @@ import com.example.rusili.homework11.network.RetrofitFactory;
 import com.example.rusili.homework11.pokedexActivity.view.PokemonViewHolder;
 import com.squareup.picasso.Picasso;
 
+import retrofit2.Retrofit;
+
 public class PokemonDetailActivity extends AppCompatActivity{
 	private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
 	private String pokemonName;
@@ -27,6 +30,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
 
 		Intent intent = getIntent();
 		pokemonName = intent.getStringExtra(PokemonViewHolder.POK_KEY);
+
 
 		initialize();
 	}
@@ -74,6 +78,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
 
 				Picasso.with(PokemonDetailActivity.this).load(sprites.getFront_default()).into(imageView);
 
+
 				textView1.setText(stats[0].getStat().getName() + ":");
 				textView2.setText(info);
 
@@ -98,5 +103,6 @@ public class PokemonDetailActivity extends AppCompatActivity{
 
 		RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
 		RetrofitFactory.getInstance().getPokemon(pokemonName);
+
 	}
 }
