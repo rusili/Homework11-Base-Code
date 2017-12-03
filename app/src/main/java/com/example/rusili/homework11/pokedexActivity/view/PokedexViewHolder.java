@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.detailscreen.model.Pokemon;
+import com.example.rusili.homework11.detailscreen.model.objects.Type;
 import com.example.rusili.homework11.detailscreen.view.PokemonDetailActivity;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
@@ -43,6 +44,12 @@ public class PokedexViewHolder extends ViewHolder {
     }
 
     public void onBind(PokemonEntries pokedex) {
+
+      //pokemon.getTypes();
+
+//      if(pokemon.getTypes().equals("fire")){
+//          cardView.setCardBackgroundColor(context.getResources().getColor(R.color.red));
+//      }
 
 
 
