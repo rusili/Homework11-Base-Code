@@ -1,11 +1,14 @@
 package com.example.rusili.homework11.pokedexActivity.view;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.rusili.homework11.R;
+import com.example.rusili.homework11.detailscreen.view.PokemonDetailActivity;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
 
@@ -45,3 +48,4 @@ public class PokeDexAdapter extends RecyclerView.Adapter<PokedexViewHolder> {
         return pokedexList.size();
     }
 }
+
