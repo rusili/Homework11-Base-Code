@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -34,9 +35,10 @@ public class PokedexFragment extends Fragment {
 		View view = inflater.inflate(R.layout.fragment_layout, container, false);
 		recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 		pokemonAdapter = new PokemonAdapter(view.getContext());
-		LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+		final GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 2);
 		recyclerView.setAdapter(pokemonAdapter);
-		recyclerView.setLayoutManager(layoutManager);
+		recyclerView.setHasFixedSize(true);
+		recyclerView.setLayoutManager(gridLayoutManager);
 		getPokedexList();
 		return view;
 	}
