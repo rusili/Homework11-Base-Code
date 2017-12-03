@@ -41,5 +41,7 @@ public class PokeDexActivity extends AppCompatActivity {
         String pokemonId = ((TextView)view).getText().toString();
         intent.putExtra(PokedexFragment.intentKey,pokemonId);
         startActivity(intent);
+
+
     }
 }
