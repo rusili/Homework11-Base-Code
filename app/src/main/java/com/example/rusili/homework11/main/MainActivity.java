@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pokemonRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        linearLayoutManager = new GridLayoutManager(getApplicationContext(),4,GridLayoutManager.VERTICAL, false);
+        linearLayoutManager = new GridLayoutManager(getApplicationContext(),3,GridLayoutManager.VERTICAL, false);
         getPokedexList();
         pokemonAdapter = new PokemonAdapter(myPokemonList);
         pokemonRecyclerView.setLayoutManager(linearLayoutManager);

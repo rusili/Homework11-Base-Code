@@ -4,32 +4,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/detail_imageview_sprite"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <FrameLayout
+        android:id="@+id/frag_container"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/show_front"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="show front"/>
+
+        <Button
+            android:id="@+id/show_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="show back"/>
+
+    </LinearLayout>
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:textAlignment="center">
         <TextView
+            android:textAlignment="center"
             android:id="@+id/detail_textview_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pokemon name"/>
+            android:text="loading name"
+            android:textSize="20sp"/>
         <TextView
+            android:textAlignment="center"
             android:id="@+id/detail_textview_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pokemon type"/>
+            android:text="loading type"
+            android:textSize="20sp"/>
         <TextView
+            android:textAlignment="center"
             android:id="@+id/detail_textview_stats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pokemon stats"/>
+            android:text="loading stats"
+            android:textSize="20sp"/>
 
 
 
