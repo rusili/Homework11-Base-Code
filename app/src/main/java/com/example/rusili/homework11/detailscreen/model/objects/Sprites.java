@@ -17,4 +17,5 @@ public class Sprites {
 	public String getFront_default () {
 		return front_default;
 	}
+
 }
