@@ -19,6 +19,7 @@ import com.example.rusili.homework11.detailscreen.model.objects.Types;
 import com.example.rusili.homework11.network.RetrofitFactory;
 
 public class PokemonDetailActivity extends AppCompatActivity{
+	private final String TAG = "PokemonDetails";
 	private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
 	private String pokemonName;
 	private ImageView pokemonPic;
@@ -104,7 +105,8 @@ public class PokemonDetailActivity extends AppCompatActivity{
 					type1.setText(types[0].getType().getName());
 					type2.setText(types[1].getType().getName());
 				}
-				Log.d("PokemonDetails","# of stat " + stats.length);
+				Log.d(TAG,"# of stat " + stats.length);
+				Log.d(TAG,pokemon.getTypes()[0].getType().getName());
 
 				TextView[] textViews = {stat1,stat2,stat3,stat4,stat5,stat6};
 				ProgressBar[] progressBars = {simpleProgressBar1,simpleProgressBar2,simpleProgressBar3,simpleProgressBar4,simpleProgressBar5,simpleProgressBar6};
