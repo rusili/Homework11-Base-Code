@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.network.RetrofitFactory;
@@ -55,7 +56,9 @@ public class PokemonDetailActivity extends AppCompatActivity {
                 //TODO: Display pokemon data
                 //Hint: Learn how to use Glide to display an image.
                 //do some more code
-                pokePic.
+                String url = pokemon.getSprites().getFront_default();
+                Glide.with(pokePic.getContext()).load(url).into(pokePic);
+
                 for(int i = 0; i < pokemon.getStats().length;i++) {
                     statsNames.get(i).setText(pokemon.getStats()[i].getStat().getName()+
                     " "+ pokemon.getStats()[i].getBase_stat());
