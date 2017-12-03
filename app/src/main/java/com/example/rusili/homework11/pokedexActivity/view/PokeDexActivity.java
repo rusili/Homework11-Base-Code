@@ -23,7 +23,7 @@ public class PokeDexActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
         PokedexFragment pokedexFragment = new PokedexFragment();
         fragmentTransaction.replace(R.id.frag_lay, pokedexFragment);
         fragmentTransaction.commit();
