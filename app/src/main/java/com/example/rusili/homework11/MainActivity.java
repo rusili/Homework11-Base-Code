@@ -4,6 +4,8 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.example.rusili.homework11.pokedexActivity.view.PokedexFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout,pokedexFragment);
-        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+        Log.d("main", "frag ran");
+
     }
 }

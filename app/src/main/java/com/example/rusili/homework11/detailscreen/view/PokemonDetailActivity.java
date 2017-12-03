@@ -21,10 +21,7 @@ import retrofit2.Retrofit;
 
 public class PokemonDetailActivity extends AppCompatActivity{
 	private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
-	private RetrofitFactory retrofitFactory;
 	private String pokemonName;
-
- 	private Retrofit retrofit;
 	private ImageView pokemonPic;
 
 	@Override
@@ -33,6 +30,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
 		setContentView(R.layout.detail_activity);
 		Intent intent = getIntent();
 		pokemonName = intent.getStringExtra("pokeName");
+		pokemonPic = findViewById(R.id.imageview);
 		initialize();
 
 //image
@@ -58,11 +56,10 @@ public class PokemonDetailActivity extends AppCompatActivity{
 			@Override
 			public void pokemonCallback (Pokemon pokemon) {
 				//TODO: Display pokemon data
-				List<Pokemon> pokemonList = new ArrayList<>();
 
-				for (int i = 0; i < 151 ; i++) {
-					Log.d("pokemon", "" + pokemonList.size());
-				}
+				Glide.with(getApplicationContext())
+						.load(pokemon.getSprites().getFront_default())
+						.into((ImageView) findViewById(pokemonPic.getId()));
 //				Hint: Learn how to use Glide to display an image.
 			}
 		};

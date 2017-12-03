@@ -32,12 +32,12 @@ public class PokedexFragment extends Fragment {
 	@Override
 	public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_layout, container, false);
-		pokemonAdapter = new PokemonAdapter();
-		getPokedexList();
-		recyclerView = view.findViewById(R.id.recyclerView);
+		recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+		pokemonAdapter = new PokemonAdapter(view.getContext());
 		LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
 		recyclerView.setAdapter(pokemonAdapter);
 		recyclerView.setLayoutManager(layoutManager);
+		getPokedexList();
 		return view;
 	}
 
@@ -51,7 +51,7 @@ public class PokedexFragment extends Fragment {
 
 				for (int i = 0; i < 151 ; i++) {
 					pokemonList.add(pokedex.getPokemon_entries()[i]);
-					Log.d("pokemon", "" + pokemonList.size());
+					Log.d(TAG, "" + pokemonList.size());
 				}
 
 				pokemonAdapter.addPokemonList(pokemonList);
