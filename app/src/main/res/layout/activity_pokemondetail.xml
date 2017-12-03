@@ -1,74 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorPrimary">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
-    <FrameLayout
-        android:id="@+id/frag_container"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_weight="1">
 
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
-        <Button
-            android:id="@+id/show_front"
+
+            <FrameLayout
+                android:id="@+id/frag_container"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center">
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/show_front"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="show front" />
+
+                <Button
+                    android:id="@+id/show_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="show back" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="show front"/>
+            android:orientation="vertical"
+            android:textAlignment="center">
 
-        <Button
-            android:id="@+id/show_back"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="show back"/>
+            <TextView
+                android:id="@+id/detail_textview_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="loading name"
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
-    </LinearLayout>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/detail_textview_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="loading type"
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:textAlignment="center">
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/detail_textview_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="loading name"
-            android:textSize="20sp"/>
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/detail_textview_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="loading type"
-            android:textSize="20sp"/>
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/detail_textview_stats"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="loading stats"
-            android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/detail_textview_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="loading stats"
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
 
+        </LinearLayout>
+        </LinearLayout>
 
-    </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

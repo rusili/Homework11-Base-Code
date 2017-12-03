@@ -56,13 +56,18 @@ public class PokemonDetailActivity extends AppCompatActivity{
 			public void pokemonCallback (Pokemon pokemon) {
 				//TODO: Display pokemon data
 				//Hint: Learn how to use Glide to display an image.
-				Log.d("WhatPokemon",pokemon.getSprites().getFront_default());
+
+				PokedexFragment frag = new PokedexFragment();
+				android.support.v4.app.FragmentManager fragM = getSupportFragmentManager();
+				FragmentTransaction trans = fragM.beginTransaction();
+				Bundle bundle = new Bundle();
+				bundle.putString("default","front");
+				bundle.putString("pokemon",pokemonName);
+				frag.setArguments(bundle);
+				trans.replace(R.id.frag_container,frag);
+				trans.commit();
 
 
-				/*imageURL = pokemon.getSprites().getFront_default();
-				Glide.with(context)
-						.load(imageURL)
-						.into(pokeImage);*/
 				StringBuilder a = new StringBuilder();
 				a.append("Pokemon Type:\n");
 				a.append(pokemon.getTypes()[0].getType().getName().toUpperCase());
