@@ -26,7 +26,12 @@
         android:id="@+id/card_image"
         android:layout_width="wrap_content"
         android:layout_marginBottom="2dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pokeball"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         />
 
     <TextView
