@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.rusili.homework11.R;
+import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.detailscreen.view.PokemonDetailActivity;
 import com.example.rusili.homework11.pokedexActivity.model.Pokedex;
 import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntries;
@@ -29,6 +30,7 @@ public class PokedexViewHolder extends ViewHolder {
     ImageView pokemonPic;
     Context context;
     CardView cardView;
+    Pokemon pokemon;
 
 
     public PokedexViewHolder(View itemView) {
@@ -42,12 +44,13 @@ public class PokedexViewHolder extends ViewHolder {
 
     public void onBind(PokemonEntries pokedex) {
 
+
+
         pokemonPic = itemView.findViewById(R.id.pokemon_images);
         context = itemView.getContext();
 
         name.setText(pokedex.getPokemon_species().getName());
         String url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokedex.getEntry_number() + ".png";
-
 
         Glide.with(context)
                 .load(url)
