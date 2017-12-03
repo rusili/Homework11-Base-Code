@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18dp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
@@ -46,14 +46,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/pokemon_text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -68,14 +68,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/pokemon_text4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -90,14 +90,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/pokemon_text6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18dp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
@@ -112,14 +112,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/pokemon_text8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -134,14 +134,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/pokemon_text10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -156,14 +156,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/pokemon_text12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/red"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
 </LinearLayout>
 
