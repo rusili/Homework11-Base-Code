@@ -43,7 +43,7 @@ public class PokemonViewHolder extends RecyclerView.ViewHolder {
 
         StringBuilder imgUrl = new StringBuilder();
         imgUrl.append("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/");
-        imgUrl.append((String) Integer.toString(pokemon.getEntry_number());
+        imgUrl.append((String) Integer.toString(pokemon.getEntry_number()));
         imgUrl.append(".png");
 
 
