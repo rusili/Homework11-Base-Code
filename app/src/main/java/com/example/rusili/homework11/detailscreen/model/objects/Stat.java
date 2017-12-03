@@ -4,7 +4,8 @@ public class Stat {
 	private String url;
 	private String name;
 
-	public String getUrl () {
+	public String getUrl ()
+	{
 		return url;
 	}
 
