@@ -40,15 +40,14 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         PokemonEntries p = pokedexList.get(position);
         holder.textView.setText(p.getPokemon_species().getName());
-        string = holder.getText();
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), PokemonDetailActivity.class);
-                intent.putExtra("pokeName" , string);
+                intent.putExtra("pokeName" , holder.textView.getText());
                 view.getContext().startActivity(intent);
             }
         });
