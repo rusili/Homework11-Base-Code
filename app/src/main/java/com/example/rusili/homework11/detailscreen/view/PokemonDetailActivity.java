@@ -47,6 +47,20 @@ public class PokemonDetailActivity extends AppCompatActivity{
 		simpleProgressBar6 = (ProgressBar) findViewById(R.id.simpleProgressBar6);
 		type1 = findViewById(R.id.type1);
 		type2 = findViewById(R.id.type2);
+		stat1.setVisibility(View.INVISIBLE);
+		stat2.setVisibility(View.INVISIBLE);
+		stat3.setVisibility(View.INVISIBLE);
+		stat4.setVisibility(View.INVISIBLE);
+		stat5.setVisibility(View.INVISIBLE);
+		stat6.setVisibility(View.INVISIBLE);
+		simpleProgressBar1.setVisibility(View.INVISIBLE);
+		simpleProgressBar2.setVisibility(View.INVISIBLE);
+		simpleProgressBar3.setVisibility(View.INVISIBLE);
+		simpleProgressBar4.setVisibility(View.INVISIBLE);
+		simpleProgressBar5.setVisibility(View.INVISIBLE);
+		simpleProgressBar6.setVisibility(View.INVISIBLE);
+		type1.setVisibility(View.INVISIBLE);
+		type2.setVisibility(View.INVISIBLE);
 
 //image
 //		Glide.with(getApplicationContext())
@@ -81,14 +95,23 @@ public class PokemonDetailActivity extends AppCompatActivity{
 //				Hint: Learn how to use Glide to display an image.
 				Stats[] stats = pokemon.getStats();
 				Types[] types = pokemon.getTypes();
-				type1.setText(types[0].getType().getName());
-				type2.setText(types[1].getType().getName());
+				if(types.length == 1) {
+					type1.setVisibility(View.VISIBLE);
+					type1.setText(types[0].getType().getName());
+				}else {
+					type1.setVisibility(View.VISIBLE);
+					type2.setVisibility(View.VISIBLE);
+					type1.setText(types[0].getType().getName());
+					type2.setText(types[1].getType().getName());
+				}
 				Log.d("PokemonDetails","# of stat " + stats.length);
 
 				TextView[] textViews = {stat1,stat2,stat3,stat4,stat5,stat6};
 				ProgressBar[] progressBars = {simpleProgressBar1,simpleProgressBar2,simpleProgressBar3,simpleProgressBar4,simpleProgressBar5,simpleProgressBar6};
 				for (int i = 0; i < 6; i++) {
 					int statNum = stats[i].getBase_stat();
+					textViews[i].setVisibility(View.VISIBLE);
+					progressBars[i].setVisibility(View.VISIBLE);
 					textViews[i].setText(stats[i].getStat().getName());
 					progressBars[i].setMax(100);
 					progressBars[i].setProgress(statNum);
