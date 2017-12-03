@@ -3,22 +3,12 @@ package com.example.rusili.homework11.detailscreen.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-
 import com.bumptech.glide.Glide;
 import com.example.rusili.homework11.R;
 import com.example.rusili.homework11.detailscreen.model.Pokemon;
 import com.example.rusili.homework11.network.RetrofitFactory;
-import com.example.rusili.homework11.pokedexActivity.api.PokedexApi;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Retrofit;
 
 public class PokemonDetailActivity extends AppCompatActivity{
 	private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
@@ -66,7 +56,6 @@ public class PokemonDetailActivity extends AppCompatActivity{
 
 			@Override
 			public void onNetworkError(Throwable t) {
-				Snackbar.make(findViewById(android.R.id.content), t.getMessage(), Snackbar.LENGTH_LONG).show();
 			}
 		};
 

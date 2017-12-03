@@ -60,7 +60,6 @@ public class PokedexFragment extends Fragment {
 
 			@Override
 			public void onNetworkError(Throwable t) {
-				Snackbar.make(getActivity().findViewById(android.R.id.content), t.getMessage(), Snackbar.LENGTH_LONG).show();
 			}
 		};
 
