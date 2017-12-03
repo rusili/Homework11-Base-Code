@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.rusili.homework11.R;
@@ -19,7 +20,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
 	@Override
 	public void onCreate (@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView();
+		setContentView(R.layout.pokemon_detail);
 
 		initialize();
 	}
@@ -32,18 +33,15 @@ public class PokemonDetailActivity extends AppCompatActivity{
 		pokemonNetworkListener = new RetrofitFactory.PokemonNetworkListener() {
 			@Override
 			public void pokemonCallback (Pokemon pokemon) {
-				//TODO: Display pokemon data
-
+                ImageView pokemonView = findViewById(R.id.pokemon_details);
+			    //TODO: Display pokemon data
                 Glide.with(context)
-
-                       //TODO: find out the proper url to load & proper view to load into
                         .load(pokemon.getSprites().getFront_default())
-                        //TODO: Create View for image to load into
-                        .into();
+                        .into(pokemonView);
 
 			}
 		};
 		RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
-		RetrofitFactory.getInstance().getPokemon(pokemonName);
+        RetrofitFactory.getInstance().getPokemon(pokemonName);
 	}
 }
