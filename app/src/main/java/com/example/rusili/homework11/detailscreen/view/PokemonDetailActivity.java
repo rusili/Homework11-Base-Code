@@ -50,14 +50,13 @@ public class PokemonDetailActivity extends AppCompatActivity{
 				Log.d("WhatPokemon",pokemon.getSprites().getFront_default());
 
 
-				imageURL = pokemon.getSprites().getFront_default();
-				Log.d("ImageUrl",imageURL);
+				imageURL = pokemon.getSprites().getBack_default();
 				Glide.with(context)
 						.load(imageURL)
 						.into(pokeImage);
 				pokeName.setText(pokemonName);
-				pokeType.setText(Arrays.toString(pokemon.getTypes()));
-				pokeStats.setText(Arrays.toString(pokemon.getStats()));
+				pokeType.setText(pokemon.getTypes()[0].getType().getName());
+				pokeStats.setText(pokemon.getStats()[0].getStat().getName() + ": " + pokemon.getStats()[0].getStat().getName() +"/n");
 			}
 
 
