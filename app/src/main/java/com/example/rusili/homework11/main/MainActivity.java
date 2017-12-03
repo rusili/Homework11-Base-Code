@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int i = 0; i < 150; i++) {
                     myPokemonList.add(pokedex.getPokemon_entries()[i]);
-                    Log.d("pokemon", "" + pokedex.getPokemon_entries()[i].getPokemon_species().getName());
-                    Log.d("pokemon", "SIZE" + myPokemonList.size());
                 }
 
                 pokemonRecyclerView.setAdapter(pokemonAdapter);

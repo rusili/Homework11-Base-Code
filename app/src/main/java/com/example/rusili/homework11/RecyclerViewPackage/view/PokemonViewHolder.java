@@ -40,16 +40,16 @@ public class PokemonViewHolder extends RecyclerView.ViewHolder {
 
     public void onBind(final PokemonEntries pokemon) {
         pokemonName.setText(pokemon.getPokemon_species().getName());
-        Log.d("pokemon", pokemon.getPokemon_species().getName());
-        Log.d("pokemon", pokemon.getPokemon_species().getUrl());
 
-        String urlPt1 = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-        String png = ".png";
-        String num = (String) Integer.toString(pokemon.getEntry_number());
-        String imgUrl = urlPt1+num+png;
+        StringBuilder imgUrl = new StringBuilder();
+        imgUrl.append("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/");
+        imgUrl.append((String) Integer.toString(pokemon.getEntry_number());
+        imgUrl.append(".png");
+
+
 
         Glide.with(itemView.getContext())
-                .load(imgUrl)
+                .load(imgUrl.toString())
                 .into(sprite);
 
 
