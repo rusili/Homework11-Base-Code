@@ -28,36 +28,7 @@ import com.example.rusili.homework11.pokedexActivity.model.objects.PokemonEntrie
  */
 
 public class PokedexFragment extends Fragment {
-<<<<<<<<< Temporary merge branch 1
-	private RetrofitFactory.PokedexNetworkListener pokedexNetworkListener;
-
-	@Nullable
-	@Override
-	public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate();
-
-		getPokedexList();
-
-		return view;
-	}
-
-	private void getPokedexList () {
-		pokedexNetworkListener = new RetrofitFactory.PokedexNetworkListener() {
-			@Override
-			public void pokedexCallback (Pokedex pokedex) {
-				// TODO: show Pokemon
-//				pokedex.getId();
-//				pokedex.getPokemon_entries();
-//				pokedex.getRegion();
-//				pokedex.getVersion_groups();
 //
-				// Each pokemon is in the Pokemon_Species object.
-			}
-		};
-		RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
-		RetrofitFactory.getInstance().getPokedex(2);
-	}
-=========
     private RetrofitFactory.PokedexNetworkListener pokedexNetworkListener;
     RecyclerView recyclerView;
     public static String intentKey;
@@ -103,5 +74,4 @@ public class PokedexFragment extends Fragment {
         RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
         RetrofitFactory.getInstance().getPokedex(2);
     }
->>>>>>>>> Temporary merge branch 2
 }

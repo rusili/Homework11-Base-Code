@@ -23,12 +23,7 @@ public class PokemonDetailActivity extends AppCompatActivity {
     ArrayList<TextView> statsNames = new ArrayList<>();
     private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
 
-<<<<<<<<< Temporary merge branch 1
-	@Override
-	public void onCreate (@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	//	setContentView();
-=========
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,5 +70,5 @@ public class PokemonDetailActivity extends AppCompatActivity {
         RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
         RetrofitFactory.getInstance().getPokemon(selectedPokemon);
     }
->>>>>>>>> Temporary merge branch 2
+
 }
