@@ -58,6 +58,7 @@ public class PokedexFragment extends Fragment {
 
                 List<PokemonEntries> pokemonEntries = new ArrayList<>();
 
+
                 // TODO: show Pokemon
                 // Each pokemon is in the Pokemon_Species object.
                 PokemonEntries[] entries = pokedex.getPokemon_entries();

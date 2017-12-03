@@ -22,5 +22,4 @@ public class Pokemon {
     }
 
 
-    //TODO: Create getters
 }
