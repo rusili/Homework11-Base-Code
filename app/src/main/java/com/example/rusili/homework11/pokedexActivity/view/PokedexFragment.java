@@ -57,6 +57,11 @@ public class PokedexFragment extends Fragment {
 				pokemonAdapter.addPokemonList(pokemonList);
 
 			}
+
+			@Override
+			public void onNetworkError(Throwable t) {
+				Snackbar.make(getActivity().findViewById(android.R.id.content), t.getMessage(), Snackbar.LENGTH_LONG).show();
+			}
 		};
 
 		RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
