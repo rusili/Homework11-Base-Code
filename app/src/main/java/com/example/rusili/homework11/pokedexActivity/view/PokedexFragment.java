@@ -26,7 +26,7 @@ import java.util.List;
 
 public class PokedexFragment extends Fragment {
     private RetrofitFactory.PokedexNetworkListener pokedexNetworkListener;
-    private List<PokemonEntries> pokeList=new ArrayList<>();
+    private List<PokemonEntries> pokeList = new ArrayList<>();
     private PokAdapter pokAdapter;
     private PokemonEntries pokemonEntries;
     private RecyclerView recyclerView;
@@ -42,7 +42,7 @@ public class PokedexFragment extends Fragment {
         recyclerView.setLayoutManager(manager);
         pokemonEntries = new PokemonEntries();
         getPokedexList();
-        Log.d("pokeLis size onCre is: ", ""+pokeList.size());
+        Log.d("pokeLis size onCre is: ", "" + pokeList.size());
         return view;
     }
 
@@ -50,15 +50,14 @@ public class PokedexFragment extends Fragment {
         pokedexNetworkListener = new RetrofitFactory.PokedexNetworkListener() {
             @Override
             public void pokedexCallback(Pokedex pokedex) {
-                // TODO: show Pokemon    ....
                 //    Each pokemon is in the Pokemon_Species object.
-                Log.d("getPokedexList..: ", "pokeLis size "+pokeList.size());
+                Log.d("getPokedexList..: ", "pokeLis size " + pokeList.size());
                 pokeList.clear();
                 for (int i = 0; i < pokedex.getPokemon_entries().length; i++) {
                     pokeList.add((pokedex.getPokemon_entries())[i]);
 
                 }
-                Log.d("pokeLis size now is: ", ""+pokeList.size());
+                Log.d("pokeLis size now is: ", "" + pokeList.size());
                 pokAdapter = new PokAdapter(pokeList);
                 recyclerView.setAdapter(pokAdapter);
 
