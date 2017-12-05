@@ -36,23 +36,14 @@ public class PokedexViewHolder extends ViewHolder {
 
     public PokedexViewHolder(View itemView) {
         super(itemView);
-        name = (TextView) itemView.findViewById(R.id.pokedex_name);
-        cardView = (CardView) itemView.findViewById(R.id.cardview);
+        name = itemView.findViewById(R.id.pokedex_name);
+        cardView = itemView.findViewById(R.id.cardview);
 
 
 
     }
 
     public void onBind(PokemonEntries pokedex) {
-
-      //pokemon.getTypes();
-
-//      if(pokemon.getTypes().equals("fire")){
-//          cardView.setCardBackgroundColor(context.getResources().getColor(R.color.red));
-//      }
-
-
-
         pokemonPic = itemView.findViewById(R.id.pokemon_images);
         context = itemView.getContext();
 
@@ -62,8 +53,6 @@ public class PokedexViewHolder extends ViewHolder {
         Glide.with(context)
                 .load(url)
                 .into(pokemonPic);
-
-
     }
 
 

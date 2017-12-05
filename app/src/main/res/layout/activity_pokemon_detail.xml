@@ -1,99 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:cardCornerRadius="50dp"
-    app:cardUseCompatPadding="true">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    >
 
-    <LinearLayout
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:id="@+id/pokemon_sprite"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/stats_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center"
-        >
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/pokemon_sprite"/>
+        />
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/poke_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Name: "/>
+</LinearLayout>
 
-            <TextView
-                android:id="@+id/poke_attack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Attack: "/>
-
-            <TextView
-                android:id="@+id/poke_defense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Defense: "/>
-
-            <TextView
-                android:id="@+id/poke_sp_attack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="SP Attack: "/>
-
-            <TextView
-                android:id="@+id/poke_sp_defense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="SP Defense: "/>
-
-            <TextView
-                android:id="@+id/poke_height"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Height: "/>
-
-            <TextView
-                android:id="@+id/poke_weight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Weight: "/>
-
-            <TextView
-                android:id="@+id/poke_moves"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Moves: "/>
-
-            <TextView
-                android:id="@+id/poke_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Type: "/>
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-</android.support.v7.widget.CardView>

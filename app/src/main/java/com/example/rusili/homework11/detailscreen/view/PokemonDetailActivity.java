@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ public class PokemonDetailActivity extends AppCompatActivity {
     ImageView pokePic;
     ArrayList<TextView> statsNames = new ArrayList<>();
     private RetrofitFactory.PokemonNetworkListener pokemonNetworkListener;
+    public RecyclerView statRecycler;
 
 
     @Override
@@ -29,28 +31,32 @@ public class PokemonDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_detail);
         initialize();
-        setValues();
-//        RecyclerView pokedexRecyclerView = (RecyclerView) findViewById(R.id.pokedex_recyclerview);
+        pokePic = findViewById(R.id.pokemon_sprite);
+        //setValues();
+        statRecycler = findViewById(R.id.stats_recycler);
+        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
+        statRecycler.setLayoutManager(manager) ;
+
     }
 
-    private void setValues(){
-        pokePic = findViewById(R.id.pokemon_sprite);
-        statsNames.add(name = findViewById(R.id.poke_name));
-        statsNames.add(attack = findViewById(R.id.poke_attack));
-        statsNames.add(spAttack = findViewById(R.id.poke_sp_attack));
-        statsNames.add(spDefense = findViewById(R.id.poke_sp_defense));
-        statsNames.add(weight = findViewById(R.id.poke_weight));
-        statsNames.add(height = findViewById(R.id.poke_height));
-        statsNames.add(type = findViewById(R.id.poke_type));
-        statsNames.add(moves = findViewById(R.id.poke_moves));
-    }
+//    private void setValues(){
+//        pokePic = findViewById(R.id.pokemon_sprite);
+//        statsNames.add(name = findViewById(R.id.poke_name));
+//        statsNames.add(attack = findViewById(R.id.poke_attack));
+//        statsNames.add(spAttack = findViewById(R.id.poke_sp_attack));
+//        statsNames.add(spDefense = findViewById(R.id.poke_sp_defense));
+//        statsNames.add(weight = findViewById(R.id.poke_weight));
+//        statsNames.add(height = findViewById(R.id.poke_height));
+//        statsNames.add(type = findViewById(R.id.poke_type));
+//        statsNames.add(moves = findViewById(R.id.poke_moves));
+//    }
 
     private void initialize() {
         getPokemonDetails();
     }
 
     private void getPokemonDetails() {
-        String selectedPokemon = getIntent().getExtras().getString(PokedexFragment.intentKey);
+        final String selectedPokemon = getIntent().getExtras().getString(PokedexFragment.intentKey);
         pokemonNetworkListener = new RetrofitFactory.PokemonNetworkListener() {
             @Override
             public void pokemonCallback(Pokemon pokemon) {
@@ -60,11 +66,14 @@ public class PokemonDetailActivity extends AppCompatActivity {
                 String url = pokemon.getSprites().getFront_default();
                 Glide.with(pokePic.getContext()).load(url).into(pokePic);
 
-                for(int i = 0; i < pokemon.getStats().length;i++) {
-                    statsNames.get(i).setText(pokemon.getStats()[i].getStat().getName()+
-                    " "+ pokemon.getStats()[i].getBase_stat());
-//                type.setText(pokemon.getTypes().toString());
-                }
+                DetailAdapter adapter = new DetailAdapter(pokemon);
+                statRecycler.setAdapter(adapter);  
+
+//                for(int i = 0; i < pokemon.getStats().length;i++) {
+//                    statsNames.get(i).setText(pokemon.getStats()[i].getStat().getName()+
+//                    " "+ pokemon.getStats()[i].getBase_stat());
+////                type.setText(pokemon.getTypes().toString());
+//                }
             }
         };
         RetrofitFactory.getInstance().setPokemonNetworkListener(pokemonNetworkListener);
