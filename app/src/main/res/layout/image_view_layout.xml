@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="2"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:hint="pokemon"
+            android:textAllCaps="true"
+            />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="HP"
+            android:layout_marginEnd="30sp"
+            android:textSize="@dimen/titleTextView"
+            android:textStyle="italic"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:id="@+id/averageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/textView"
+            android:layout_gravity="end"
+
+            android:layout_toEndOf="@+id/textView"
+            android:text="50"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1.80"
+        android:background="@color/colorRed"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+
+            android:layout_width="380dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/pokemon_ImageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="62dp"/>
+
+            <ProgressBar
+                android:id="@+id/simpleProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:indeterminate="false"
+                android:max="100"
+                android:minHeight="302dp"
+                android:minWidth="50dp"
+                android:progress="1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        >
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/widget_edittext_dark"
+            android:text="Stats"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/titleTextView"/>
+        <TextView
+
+            android:id="@+id/statsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@android:color/widget_edittext_dark"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/widget_edittext_dark"
+            android:text="Type"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/titleTextView"/>
+
+        <TextView
+            android:id="@+id/typeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

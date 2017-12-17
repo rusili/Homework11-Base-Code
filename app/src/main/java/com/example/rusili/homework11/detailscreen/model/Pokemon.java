@@ -9,5 +9,28 @@ public class Pokemon {
 	private Sprites sprites;
 	private Types[] types;
 
-	//TODO: Create getters
+	public Stats[] getStats() {
+		return stats;
+	}
+
+	public void setStats(Stats[] stats) {
+		this.stats = stats;
+	}
+
+	public Sprites getSprites() {
+		return sprites;
+	}
+
+	public void setSprites(Sprites sprites) {
+		this.sprites = sprites;
+	}
+
+	public Types[] getTypes() {
+		return types;
+	}
+
+	public void setTypes(Types[] types) {
+		this.types = types;
+	}
+//TODO: Create getters
 }
