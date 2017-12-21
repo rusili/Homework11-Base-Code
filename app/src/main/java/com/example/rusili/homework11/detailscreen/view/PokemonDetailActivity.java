@@ -68,11 +68,6 @@ public class PokemonDetailActivity extends AppCompatActivity{
 			@Override
 			public void pokemonCallback(Pokemon pokemon) {
 
-//                Glide.with(getApplicationContext())
-//                        .load(url)
-//                        .apply(new RequestOptions().override(600, 200))
-//                        .into((ImageView) findViewById(R.id.pokemonimage_ImageView));
-
 
 				Glide.with(getApplicationContext())
 						.load(pokemon.getSprites().getFront_default())
@@ -103,15 +98,13 @@ public class PokemonDetailActivity extends AppCompatActivity{
 
 				}
 
-				int total = average / 6;
-				//statsTextView.setText(stats[0].getStat().getName()+" : "+stats[0].getBase_stat());
+
+
 				pokemonStats.setText(st);
 				pokemonType.setText(typ);
 
 				pokemonAverage.setText(average);
 
-				//System.out.println("==========="+);
-				//stats[0].getStat();
 
 				ProgressBar simpleProgressBar = (ProgressBar) findViewById(R.id.simpleProgressBar); // initiate the progress bar
 				simpleProgressBar.setMax(100); // 100 maximum value for the progress value
