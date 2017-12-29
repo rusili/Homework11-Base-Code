@@ -40,6 +40,7 @@ public class PokemonDetailActivity extends AppCompatActivity{
 			public void pokemonCallback (Pokemon pokemon) {
 				//TODO: Display pokemon data
 				//Hint: Learn how to use Glide to display an image
+
 				Glide.with(getApplicationContext())
 						.load(pokemon.getSprites().getBack_default())
 						.into((ImageView)findViewById(R.id.pokemon_image));
