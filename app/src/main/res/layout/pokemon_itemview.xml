@@ -26,23 +26,21 @@
 
             <ImageView
                 android:id="@+id/itemv_image"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:paddingBottom="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"/>
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"/>
 
             <TextView
                 android:id="@+id/name_view"
-                android:layout_width="60dp"
+                android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:textSize="100sp"
+                android:textSize="10sp"
                 android:text="name"
-                android:paddingBottom="20dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"/>
+                android:textColor="@android:color/black"
+                android:textAllCaps="true"
+                android:gravity="center"/>
 
         </LinearLayout>
 
