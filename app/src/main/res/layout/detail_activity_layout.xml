@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/newbg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,6 +16,15 @@
             android:layout_height="250dp" />
 
     </LinearLayout>
+
+<android.support.v7.widget.CardView
+    android:layout_width="300dp"
+    android:layout_height="250dp"
+    android:elevation="10dp"
+    android:layout_gravity="center"
+    app:cardCornerRadius="10dp"
+    android:background="@android:color/holo_green_dark">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pokmeon Name"
+            android:textAllCaps="true"
             android:layout_weight="1"/>
 
         <TextView
@@ -35,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pokmeon Type"
+            android:textAllCaps="true"
             android:layout_weight="1"/>
 
         <TextView
@@ -42,8 +54,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pokmeon Stats"
+            android:textAllCaps="true"
             android:layout_weight="1"/>
 
     </LinearLayout>
+</android.support.v7.widget.CardView>
+
 
 </LinearLayout>
