@@ -1,7 +1,7 @@
 package com.example.rusili.homework11.detailscreen.model.objects;
-
 public class Type {
-	private String url;
+
+    private String url;
 	private String name;
 
 	public String getUrl () {

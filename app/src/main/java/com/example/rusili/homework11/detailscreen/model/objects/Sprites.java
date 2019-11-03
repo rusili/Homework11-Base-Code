@@ -1,5 +1,6 @@
 package com.example.rusili.homework11.detailscreen.model.objects;
 
+
 public class Sprites {
 	private String back_female;
 	private String back_shiny_female;
